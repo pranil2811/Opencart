@@ -7,18 +7,14 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-
-import com.utility.ReadProperties_Utility;
+import com.utility.Utility;
 
 public class Base {
 
 	public static WebDriver driver;
 	String projectPath = System.getProperty("user.dir");
-	ReadProperties_Utility read = new ReadProperties_Utility();
-	public String browser = read.getBrowserValue();
-	public String url = read.getUrl();
-	public String username = read.getUsername();
-	public String password = read.getPassword();
+	public String browser = Utility.getPropertyDirectly("browser");
+	public String url = Utility.getPropertyDirectly("url");
 
 	@BeforeClass(alwaysRun = true)
 	public void browserSetup() throws Exception {
@@ -50,7 +46,6 @@ public class Base {
 	public static WebDriver getDriver() {
 		return driver;
 	}
-	
 
 	@AfterClass(alwaysRun = true)
 	public void tearUp() throws InterruptedException {

@@ -1,11 +1,18 @@
 package com.utility;
 
+/** 
+ * @Author: Shubham Shedge
+ * @Version: 1.0
+ * @Description: This class contains all Utility functions.
+ */
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
+import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.usermodel.Cell;
@@ -20,11 +27,83 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.Reporter;
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Method;
+import java.nio.file.Paths;
+
+import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentTest;
 
 public class Utility {
+
+	public static String getPropertyDirectly(String key) {
+		Properties properties = new Properties();
+		try {
+			FileInputStream file = new FileInputStream(
+					System.getProperty("user.dir") + "\\Testdata\\properties_file\\env.properties");
+			properties.load(file);
+			return properties.getProperty(key);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null; // Handle the exception according to your needs
+		}
+	}
+
+	public static String getLocator(String key) {
+		Properties properties = new Properties();
+		try (FileInputStream file = new FileInputStream(
+				System.getProperty("user.dir") + "\\locators\\locators.properties")) {
+			properties.load(file);
+			return properties.getProperty(key);
+		} catch (IOException e) {
+			e.printStackTrace();
+			return null; // Handle the exception according to your needs
+		}
+	}
+
+	public static WebElement findElement(String locator, WebDriver driver) {
+		String[] locatorInfo = locator.split("=", 2);
+		String locatorType = locatorInfo[0];
+		String locatorValue = locatorInfo[1];
+
+		switch (locatorType.toLowerCase()) {
+		case "id":
+			return driver.findElement(By.id(locatorValue));
+		case "xpath":
+			return driver.findElement(By.xpath(locatorValue));
+		case "css":
+		case "cssselector":
+			return driver.findElement(By.cssSelector(locatorValue));
+		case "name":
+			return driver.findElement(By.name(locatorValue));
+		case "classname":
+			return driver.findElement(By.className(locatorValue));
+		case "link":
+		case "linktext":
+			return driver.findElement(By.linkText(locatorValue));
+		case "partiallink":
+		case "partiallinktext":
+			return driver.findElement(By.partialLinkText(locatorValue));
+		// Add more cases for other locator types if needed
+		default:
+			throw new IllegalArgumentException("Unsupported locator type: " + locatorType);
+		}
+	}
+
+	public static WebElement getElement(String key, WebDriver driver) {
+		String locator = getLocator(key);
+		if (locator != null) {
+			return findElement(locator, driver);
+		} else {
+			throw new RuntimeException("Locator not found for key: " + key);
+		}
+	}
 
 	public static void setImplicitWait(WebDriver driver, int timeoutInSeconds) {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(timeoutInSeconds));
@@ -134,7 +213,7 @@ public class Utility {
 		return cellValue;
 	}
 
-	public static void captureScreenshot(WebDriver driver, String testName) {
+	public static String captureScreenshotOnDesktop(WebDriver driver, String testName) {
 		try {
 			if (driver instanceof TakesScreenshot) {
 				TakesScreenshot screenshotDriver = (TakesScreenshot) driver;
@@ -143,8 +222,8 @@ public class Utility {
 				SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss");
 				String timestamp = dateFormat.format(new Date());
 
-				String screenshotDirectory = System.getProperty("user.dir") + "\\screenshot\\";
-
+				String screenshotDirectory = Paths.get(System.getProperty("user.home"), "Desktop", "screenshots")
+						.toString() + "\\";
 				File directory = new File(screenshotDirectory);
 				if (!directory.exists()) {
 					directory.mkdirs();
@@ -156,12 +235,14 @@ public class Utility {
 
 				System.out.println("Screenshot saved as: " + screenshotFilePath);
 
+				return screenshotFilePath;
 			} else {
 				System.out.println("Driver does not support taking screenshots.");
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		return null; // Return null if unable to capture screenshot
 	}
 
 	public static String[] readRowWithFlagY(String filePath, String sheetName, String flagVal) {
@@ -205,6 +286,27 @@ public class Utility {
 		}
 
 		return null; // Return null if no row with the flag "Y" is found
+	}
+
+	public static String getTestMethodDescription(Class<?> testClass, String methodName) {
+		try {
+			// Get the test method using reflection
+			Method testMethod = testClass.getMethod(methodName);
+
+			// Get the Test annotation
+			Annotation annotation = testMethod.getAnnotation(Test.class);
+
+			// Check if the Test annotation is present
+			if (annotation instanceof Test) {
+				// Cast the annotation to Test and get the description
+				return ((Test) annotation).description();
+			} else {
+				return "Test annotation not found";
+			}
+		} catch (NoSuchMethodException e) {
+			e.printStackTrace();
+			return "Method not found: " + methodName;
+		}
 	}
 
 }
