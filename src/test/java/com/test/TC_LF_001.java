@@ -15,11 +15,9 @@ public class TC_LF_001 extends Base {
 	public void Login() {
 		driver.get(url);
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		NavBar_Page nb = new NavBar_Page(driver);
-		nb.click_on_my_ac();
+		nb.clickOnLogReg("log");
 		Login_Page np = new Login_Page(driver);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		np.enterCredLogin();
 	}
 }

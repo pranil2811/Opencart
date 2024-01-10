@@ -8,6 +8,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+import com.utility.Utility;
+
 public class Login_Page {
 
 	WebDriver driver;
@@ -29,16 +31,11 @@ public class Login_Page {
 	}
 
 	public void enterCredLogin() {
-		assertEquals(true, email.isEnabled());
-		email.click();
-		email.sendKeys("pranilpalse7@gmail.com");
-		assertEquals(true, password.isDisplayed());
-		password.click();
-		password.sendKeys("pranil@123");
-		assertEquals(true, LoginBtn.isEnabled());
-		LoginBtn.click();
-		
-
+		Utility.clickElement(driver, email);
+		Utility.sendKeys(driver, email, "pranilpalse7@gmail.com", 10);
+		Utility.clickElement(driver, password);
+		Utility.sendKeys(driver, password, "pranil@123", 10);
+		Utility.clickElement(driver, LoginBtn);
 	}
 
 	public void clickLoginBtn() {
