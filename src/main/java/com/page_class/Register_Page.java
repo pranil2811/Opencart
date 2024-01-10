@@ -12,6 +12,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import com.utility.Utility;
+
 public class Register_Page {
 
 	public static WebDriver driver;
@@ -66,88 +68,78 @@ public class Register_Page {
 	}
 
 	public void enterCredentials() {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		first_name.clear();
-		Assert.assertEquals(true, first_name.isEnabled());
-		first_name.click();
-		first_name.sendKeys("shubham");
-		last_name.clear();
-		Assert.assertEquals(true, last_name.isEnabled());
-		last_name.click();
-		last_name.sendKeys("shedge");
-		email.clear();
-		Assert.assertEquals(true, email.isEnabled());
-		email.click();
-		email.sendKeys("shubhamshedge@gmail.com");
-		password.clear();
-		Assert.assertEquals(true, email.isEnabled());
-		password.click();
-		Assert.assertEquals(true, email.isEnabled());
-		password.sendKeys("shubham@123");
-		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(10));
-		w.until(ExpectedConditions.elementToBeClickable(Privacy));
 
-//		Actions ac = new Actions(driver);
-//		ac.moveToElement(Privacy).click().build().perform();
+		Utility.assertElementPresent(driver, first_name, 10);
+		Utility.clickElement(driver, first_name, 10);
+		Utility.sendKeys(driver, first_name, "aniket", 10);
 
-		JavascriptExecutor executor = (JavascriptExecutor) driver;
-		executor.executeScript("arguments[0].click();", Privacy);
+		Utility.assertElementPresent(driver, last_name, 10);
+		Utility.clickElement(driver, last_name, 10);
+		Utility.sendKeys(driver, first_name, "patil", 10);
 
-//		Privacy.click();
-		Assert.assertEquals(true, ContinueBtn.isDisplayed());
+		Utility.assertElementPresent(driver, email, 10);
+		Utility.clickElement(driver, email, 10);
+		Utility.sendKeys(driver, email, "aniketpatil@gmail.com", 10);
 
-		JavascriptExecutor executor1 = (JavascriptExecutor) driver;
-		executor1.executeScript("arguments[0].click();", ContinueBtn);
+		Utility.assertElementPresent(driver, password, 10);
+		Utility.clickElement(driver, password, 10);
+		Utility.sendKeys(driver, password, "aniket@123", 10);
 
-//		ContinueBtn.click();
-		Assert.assertEquals("Your Account Has Been Created!", Heading.getText());
-		Assert.assertEquals(true, SuccussPage_ContinueBtn.isDisplayed());
-		SuccussPage_ContinueBtn.click();
+		Utility.clickElement(driver, Privacy);
+		Utility.clickElement(driver, ContinueBtn);
+
+		Utility.assertElementPresent(driver, Heading, 10);
+		Utility.assertTextEqualsByElementText(driver, Heading, "Your Account Has Been Created!", 10);
+
+		Utility.assertElementPresent(driver, SuccussPage_ContinueBtn, 10);
+		Utility.clickElement(driver, SuccussPage_ContinueBtn, 10);
 
 	}
 
 	public void empty_cred() {
-		JavascriptExecutor executor1 = (JavascriptExecutor) driver;
-		executor1.executeScript("arguments[0].click();", ContinueBtn);
 
-//		ContinueBtn.click();
-		String a = errorFirstname.getText();
+		Utility.assertElementPresent(driver, ContinueBtn, 10);
+		Utility.clickElement(driver, ContinueBtn);
 
-		Assert.assertEquals("First Name must be between 1 and 32 characters!", a);
-//		Assert.assertEquals("Last Name must be between 1 and 32 characters!", errorLastname.getText());
-//		Assert.assertEquals("E-Mail Address does not appear to be valid!", errorEmail.getText());
-//		Assert.assertEquals("Password must be between 4 and 20 characters!", errorPassword.getText());
+		Utility.assertElementPresent(driver, errorFirstname, 10);
+		Utility.assertTextEqualsByElementText(driver, errorFirstname, "First Name must be between 1 and 32 characters!",
+				10);
+
+		Utility.assertElementPresent(driver, errorLastname, 10);
+		Utility.assertTextEqualsByElementText(driver, errorLastname, "Last Name must be between 1 and 32 characters!",
+				10);
+
+		Utility.assertElementPresent(driver, errorEmail, 10);
+		Utility.assertTextEqualsByElementText(driver, errorEmail, "E-Mail Address does not appear to be valid!", 10);
+
+		Utility.assertElementPresent(driver, errorPassword, 10);
+		Utility.assertTextEqualsByElementText(driver, errorPassword, "Password must be between 4 and 20 characters!",
+				10);
+
 	}
 
 	public void duplicate_cread() {
-		first_name.clear();
-		Assert.assertEquals(true, first_name.isEnabled());
-		first_name.click();
-		first_name.sendKeys("shubham");
-		last_name.clear();
-		Assert.assertEquals(true, last_name.isEnabled());
-		last_name.click();
-		last_name.sendKeys("shedge");
-		email.clear();
-		Assert.assertEquals(true, email.isEnabled());
-		email.click();
-		email.sendKeys("pranilpalse7@gmail.com");
-		password.clear();
-		Assert.assertEquals(true, email.isEnabled());
-		password.click();
-		Assert.assertEquals(true, email.isEnabled());
-		password.sendKeys("shubham@123");
-		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(10));
-		w.until(ExpectedConditions.elementToBeClickable(Privacy));
 
-		Actions ac = new Actions(driver);
-		ac.moveToElement(Privacy).click().build().perform();
+		Utility.assertElementPresent(driver, first_name, 10);
+		Utility.clickElement(driver, first_name, 10);
+		Utility.sendKeys(driver, first_name, "aniket", 10);
 
-//		Privacy.click();
-		Assert.assertEquals(true, ContinueBtn.isDisplayed());
-		ContinueBtn.click();
+		Utility.assertElementPresent(driver, last_name, 10);
+		Utility.clickElement(driver, last_name, 10);
+		Utility.sendKeys(driver, first_name, "patil", 10);
 
-		Assert.assertEquals(" Warning: E-Mail Address is already registered!'", alert.getText());
+		Utility.assertElementPresent(driver, email, 10);
+		Utility.clickElement(driver, email, 10);
+		Utility.sendKeys(driver, email, "aniketpatil@gmail.com", 10);
+
+		Utility.assertElementPresent(driver, password, 10);
+		Utility.clickElement(driver, password, 10);
+		Utility.sendKeys(driver, password, "aniket@123", 10);
+
+		Utility.clickElement(driver, Privacy);
+		Utility.clickElement(driver, ContinueBtn);
+
+		Utility.assertElementPresent(driver, alert, 10);
+		Utility.assertTextEqualsByElementText(driver, alert, " Warning: E-Mail Address is already registered!", 10);
 	}
-
 }

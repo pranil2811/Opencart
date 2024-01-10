@@ -31,11 +31,12 @@ public class Login_Page {
 	}
 
 	public void enterCredLogin() {
-		Utility.clickElement(driver, email,10);
+
+		Utility.clickElement(driver, email);
 		Utility.sendKeys(driver, email, "pranilpalse7@gmail.com", 10);
-		Utility.clickElement(driver, password,10);
+		Utility.clickElement(driver, password);
 		Utility.sendKeys(driver, password, "pranil@123", 10);
-		Utility.clickElement(driver, LoginBtn,10);
+		Utility.clickElement(driver, LoginBtn);
 	}
 
 	public void clickLoginBtn() {

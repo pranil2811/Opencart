@@ -13,11 +13,13 @@ public class TC_LF_001 extends Base {
 
 	@Test(priority = 1, description = "Login functionality")
 	public void Login() {
-		Login_Page np = new Login_Page(driver);
-		NavBar_Page nb = new NavBar_Page(driver);
+
 		driver.get(url);
 		driver.manage().window().maximize();
-		nb.clickOnLogReg("login");
-//		np.enterCredLogin();
+
+		NavBar_Page nb = new NavBar_Page(driver);
+		nb.clickOnLogReg("log");
+		Login_Page np = new Login_Page(driver);
+		np.enterCredLogin();
 	}
 }
