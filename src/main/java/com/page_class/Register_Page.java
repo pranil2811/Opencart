@@ -41,7 +41,7 @@ public class Register_Page {
 
 	@FindBy(xpath = "//button[text()='Continue']")
 	public WebElement ContinueBtn;
-	
+
 	@FindBy(xpath = "//a[text()='Continue']")
 	public WebElement SuccussPage_ContinueBtn;
 
@@ -89,36 +89,36 @@ public class Register_Page {
 
 //		Actions ac = new Actions(driver);
 //		ac.moveToElement(Privacy).click().build().perform();
-		
-		JavascriptExecutor executor = (JavascriptExecutor)driver;
+
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", Privacy);
-		
+
 //		Privacy.click();
 		Assert.assertEquals(true, ContinueBtn.isDisplayed());
-		
-		JavascriptExecutor executor1 = (JavascriptExecutor)driver;
+
+		JavascriptExecutor executor1 = (JavascriptExecutor) driver;
 		executor1.executeScript("arguments[0].click();", ContinueBtn);
-		
+
 //		ContinueBtn.click();
 		Assert.assertEquals("Your Account Has Been Created!", Heading.getText());
 		Assert.assertEquals(true, SuccussPage_ContinueBtn.isDisplayed());
 		SuccussPage_ContinueBtn.click();
-		
+
 	}
-	
+
 	public void empty_cred() {
-		JavascriptExecutor executor1 = (JavascriptExecutor)driver;
+		JavascriptExecutor executor1 = (JavascriptExecutor) driver;
 		executor1.executeScript("arguments[0].click();", ContinueBtn);
-		
+
 //		ContinueBtn.click();
 		String a = errorFirstname.getText();
-		
+
 		Assert.assertEquals("First Name must be between 1 and 32 characters!", a);
 //		Assert.assertEquals("Last Name must be between 1 and 32 characters!", errorLastname.getText());
 //		Assert.assertEquals("E-Mail Address does not appear to be valid!", errorEmail.getText());
 //		Assert.assertEquals("Password must be between 4 and 20 characters!", errorPassword.getText());
 	}
-	
+
 	public void duplicate_cread() {
 		first_name.clear();
 		Assert.assertEquals(true, first_name.isEnabled());
@@ -142,16 +142,12 @@ public class Register_Page {
 
 		Actions ac = new Actions(driver);
 		ac.moveToElement(Privacy).click().build().perform();
-		
+
 //		Privacy.click();
 		Assert.assertEquals(true, ContinueBtn.isDisplayed());
 		ContinueBtn.click();
-		
+
 		Assert.assertEquals(" Warning: E-Mail Address is already registered!'", alert.getText());
 	}
-	
-	
-	
-	
 
 }

@@ -17,7 +17,7 @@ public class TC_RF_009 extends Base {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		NavBar_Page nb = new NavBar_Page(driver);
 		Register_Page rp = new Register_Page(driver);
-		nb.click_on_my_ac();
+		nb.clickOnLogReg("register");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		rp.duplicate_cread();
 	}
