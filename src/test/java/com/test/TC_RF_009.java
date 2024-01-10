@@ -16,7 +16,7 @@ public class TC_RF_009 extends Base {
 		driver.manage().window().maximize();
 		NavBar_Page nb = new NavBar_Page(driver);
 		Login_Page lp = new Login_Page(driver);
-		nb.clickOnLogReg("login");
+		nb.clickOnLogReg("log");
 		lp.enterCredLogin();
 	}
 

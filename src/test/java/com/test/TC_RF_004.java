@@ -17,7 +17,7 @@ public class TC_RF_004 extends Base {
 		driver.manage().deleteAllCookies();
 		NavBar_Page nb = new NavBar_Page(driver);
 		Register_Page rp = new Register_Page(driver);
-		nb.clickOnLogReg("register");
+		nb.clickOnLogReg("reg");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		rp.empty_cred();
 	}

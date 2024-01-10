@@ -75,7 +75,7 @@ public class Register_Page {
 
 		Utility.assertElementPresent(driver, last_name, 10);
 		Utility.clickElement(driver, last_name, 10);
-		Utility.sendKeys(driver, first_name, "patil", 10);
+		Utility.sendKeys(driver, last_name, "patil", 10);
 
 		Utility.assertElementPresent(driver, email, 10);
 		Utility.clickElement(driver, email, 10);

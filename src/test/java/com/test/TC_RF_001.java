@@ -15,12 +15,9 @@ public class TC_RF_001 extends Base {
 	public void register() {
 		driver.get(url);
 		driver.manage().window().maximize();
-		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		NavBar_Page nb = new NavBar_Page(driver);
 		Register_Page rp = new Register_Page(driver);
-		nb.clickOnLogReg("register");
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		nb.clickOnLogReg("reg");
 		rp.enterCredentials();
 	}
 
