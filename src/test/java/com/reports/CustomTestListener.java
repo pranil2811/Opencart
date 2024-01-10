@@ -2,26 +2,32 @@ package com.reports;
 
 import org.testng.ITestContext;
 import org.testng.ITestListener;
-import java.lang.reflect.Field;
+import org.testng.ITestResult;
+import org.testng.xml.XmlSuite;
+import java.io.IOException;
+import java.nio.file.*;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class CustomTestListener implements ITestListener {
 
 	@Override
-	public void onStart(ITestContext context) {
-		// Set the custom output directory to the system desktop
+	public void onFinish(ITestContext context) {
 		String desktopPath = System.getProperty("user.home") + "/Desktop";
 		String customReportsPath = desktopPath + "/custom-reports";
 
+		Path sourcePath = Paths.get("test-output");
+		Path targetPath = Paths.get(customReportsPath);
+
 		try {
-			// Use reflection to set the absolute path
-			Field field = context.getClass().getDeclaredField("m_outputDirectory");
-			field.setAccessible(true);
-			field.set(context, Paths.get(customReportsPath).toAbsolutePath().toString());
-		} catch (Exception e) {
+			Files.move(sourcePath, targetPath, StandardCopyOption.REPLACE_EXISTING);
+			System.out.println("Reports moved successfully to " + customReportsPath);
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
+	
+	
 
 	// ... (other methods remain unchanged)
 }
