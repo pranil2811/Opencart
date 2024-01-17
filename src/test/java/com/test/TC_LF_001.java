@@ -6,7 +6,9 @@ import com.base.Base;
 import com.page_class.Login_Page;
 import com.page_class.MyAccount_Page;
 import com.page_class.NavBar_Page;
+import com.reports.ExtentReportListener;
 
+@Listeners(ExtentReportListener.class)
 public class TC_LF_001 extends Base {
 
 	@Test(priority = 1, description = "Login functionality")
