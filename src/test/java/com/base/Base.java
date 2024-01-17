@@ -1,5 +1,7 @@
 package com.base;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -7,6 +9,8 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+
+import com.test.TC_LF_001;
 import com.utility.Utility;
 
 public class Base {
@@ -15,6 +19,7 @@ public class Base {
 	String projectPath = System.getProperty("user.dir");
 	public String browser = Utility.getPropertyDirectly("browser");
 	public String url = Utility.getPropertyDirectly("url");
+	private static final Logger logger = LogManager.getLogger(Base.class);
 
 	@BeforeClass(alwaysRun = true)
 	public void browserSetup() throws Exception {
@@ -41,6 +46,7 @@ public class Base {
 
 			throw new Exception("Invalid Browser Value");
 		}
+		logger.info("browser is opened");
 	}
 
 	public static WebDriver getDriver() {
@@ -51,5 +57,6 @@ public class Base {
 	public void tearUp() throws InterruptedException {
 		Thread.sleep(3000);
 		driver.quit();
+		logger.info("browser is closed");
 	}
 }
