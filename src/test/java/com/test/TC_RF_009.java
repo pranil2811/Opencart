@@ -5,9 +5,7 @@ import org.testng.annotations.Test;
 import com.base.Base;
 import com.page_class.Login_Page;
 import com.page_class.NavBar_Page;
-import com.reports.CustomTestListener;
 
-@Listeners(CustomTestListener.class)
 public class TC_RF_009 extends Base {
 
 	@Test(priority = 1, description = "Duplicate credentials")
