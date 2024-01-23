@@ -18,8 +18,5 @@ public class MyAccount_Page {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
-	
-	
 
 }

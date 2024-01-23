@@ -27,7 +27,6 @@ public class ExtentReportListener implements ITestListener {
 	private static ExtentReports extent;
 	static SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss");
 	static String timestamp = dateFormat.format(new Date());
-//	static String Reportpath = System.getProperty("user.dir") + "\\reports\\" + timestamp + ".html";
 	static String Reportpath = Paths.get(System.getProperty("user.home"), "Desktop", "reports", timestamp + ".html")
 			.toString();
 
