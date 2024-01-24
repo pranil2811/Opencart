@@ -23,10 +23,12 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -189,6 +191,15 @@ public class Utility {
 		}
 	}
 
+	public static void assertPageTitleEquals(WebDriver driver, String expectedTitle, int timeoutInSeconds) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
+		wait.until(ExpectedConditions.titleContains(expectedTitle));
+
+		String actualTitle = driver.getTitle();
+
+		Assert.assertEquals(actualTitle, expectedTitle, "Page title mismatch: ");
+	}
+
 	public static String readExcelData(String filePath, String sheetName, int rowNum, int colNum) {
 		String cellValue = null;
 		try {
@@ -307,6 +318,11 @@ public class Utility {
 			e.printStackTrace();
 			return "Method not found: " + methodName;
 		}
+	}
+
+	public static void sendKeysAction(WebDriver driver, Keys key) {
+		Actions actions = new Actions(driver);
+		actions.sendKeys(key).perform();
 	}
 
 }
