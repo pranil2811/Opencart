@@ -29,18 +29,14 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.Reporter;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.nio.file.Paths;
 
 import org.testng.annotations.Test;
-
-import com.aventstack.extentreports.ExtentTest;
 
 public class Utility {
 

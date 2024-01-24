@@ -6,7 +6,6 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import com.base.Base;
 import com.page_class.Login_Page;
-import com.page_class.MyAccount_Page;
 import com.page_class.NavBar_Page;
 
 import com.reports.ExtentReportListener;

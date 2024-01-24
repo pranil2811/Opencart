@@ -18,3 +18,71 @@
 [INFO ] 2024-01-23 16:37:01.079 [main] Base - browser is closed
 [INFO ] 2024-01-23 16:46:36.764 [main] Base - browser is opened
 [INFO ] 2024-01-23 16:46:48.155 [main] Base - browser is closed
+[INFO ] 2024-01-24 19:20:19.022 [main] Base - browser is opened
+[INFO ] 2024-01-24 19:20:23.824 [main] TC_ATC_002 - url opened
+[INFO ] 2024-01-24 19:20:24.903 [main] TC_ATC_002 - window maximized
+[INFO ] 2024-01-24 19:20:28.869 [main] TC_ATC_002 - click on btn
+[INFO ] 2024-01-24 19:20:30.373 [main] TC_ATC_002 - Credentials entered 
+[INFO ] 2024-01-24 19:20:48.953 [main] Base - browser is closed
+[INFO ] 2024-01-24 19:31:08.191 [main] Base - browser is opened
+[INFO ] 2024-01-24 19:31:13.093 [main] TC_ATC_002 - url opened
+[INFO ] 2024-01-24 19:31:13.867 [main] TC_ATC_002 - window maximized
+[INFO ] 2024-01-24 19:31:15.968 [main] TC_ATC_002 - click on btn
+[INFO ] 2024-01-24 19:31:17.191 [main] TC_ATC_002 - Credentials entered 
+[INFO ] 2024-01-24 19:31:33.918 [main] Base - browser is closed
+[INFO ] 2024-01-24 19:36:16.622 [main] Base - browser is opened
+[INFO ] 2024-01-24 19:36:20.724 [main] TC_ATC_002 - url opened
+[INFO ] 2024-01-24 19:36:21.662 [main] TC_ATC_002 - window maximized
+[INFO ] 2024-01-24 19:36:24.047 [main] TC_ATC_002 - click on btn
+[INFO ] 2024-01-24 19:36:25.262 [main] TC_ATC_002 - Login Successfull 
+[INFO ] 2024-01-24 19:36:28.155 [main] TC_ATC_002 - Land on My Wishlist Page 
+[INFO ] 2024-01-24 19:36:42.794 [main] Base - browser is closed
+[INFO ] 2024-01-24 19:39:54.308 [main] Base - browser is opened
+[INFO ] 2024-01-24 19:39:58.610 [main] TC_ATC_002 - url opened
+[INFO ] 2024-01-24 19:39:58.838 [main] TC_ATC_002 - window maximized
+[INFO ] 2024-01-24 19:40:00.982 [main] TC_ATC_002 - click on btn
+[INFO ] 2024-01-24 19:40:02.287 [main] TC_ATC_002 - Login Successfull 
+[INFO ] 2024-01-24 19:40:05.756 [main] TC_ATC_002 - Land on My Wishlist Page 
+[INFO ] 2024-01-24 19:40:20.114 [main] Base - browser is closed
+[INFO ] 2024-01-24 19:41:40.770 [main] Base - browser is opened
+[INFO ] 2024-01-24 19:41:45.088 [main] TC_ATC_002 - url opened
+[INFO ] 2024-01-24 19:41:45.997 [main] TC_ATC_002 - window maximized
+[INFO ] 2024-01-24 19:41:48.035 [main] TC_ATC_002 - click on btn
+[INFO ] 2024-01-24 19:41:49.213 [main] TC_ATC_002 - Login Successfull 
+[INFO ] 2024-01-24 19:41:52.120 [main] TC_ATC_002 - Land on My Wishlist Page 
+[INFO ] 2024-01-24 19:42:17.280 [main] Base - browser is closed
+[INFO ] 2024-01-24 19:57:15.282 [main] Base - browser is opened
+[INFO ] 2024-01-24 19:57:20.318 [main] TC_ATC_002 - url opened
+[INFO ] 2024-01-24 19:57:20.552 [main] TC_ATC_002 - window maximized
+[INFO ] 2024-01-24 19:57:23.398 [main] TC_ATC_002 - click on btn
+[INFO ] 2024-01-24 19:57:24.703 [main] TC_ATC_002 - Login Successfull 
+[INFO ] 2024-01-24 19:57:28.288 [main] TC_ATC_002 - Land on My Wishlist Page 
+[INFO ] 2024-01-24 19:58:02.577 [main] Base - browser is closed
+[INFO ] 2024-01-24 19:58:44.398 [main] Base - browser is opened
+[INFO ] 2024-01-24 19:58:48.221 [main] TC_ATC_002 - url opened
+[INFO ] 2024-01-24 19:58:48.703 [main] TC_ATC_002 - window maximized
+[INFO ] 2024-01-24 19:58:50.716 [main] TC_ATC_002 - click on btn
+[INFO ] 2024-01-24 19:58:51.822 [main] TC_ATC_002 - Login Successfull 
+[INFO ] 2024-01-24 19:58:54.294 [main] TC_ATC_002 - Land on My Wishlist Page 
+[INFO ] 2024-01-24 19:59:19.520 [main] Base - browser is closed
+[INFO ] 2024-01-24 20:02:42.876 [main] Base - browser is opened
+[INFO ] 2024-01-24 20:02:46.778 [main] TC_ATC_002 - url opened
+[INFO ] 2024-01-24 20:02:47.751 [main] TC_ATC_002 - window maximized
+[INFO ] 2024-01-24 20:02:49.578 [main] TC_ATC_002 - click on btn
+[INFO ] 2024-01-24 20:02:50.634 [main] TC_ATC_002 - Login Successfull 
+[INFO ] 2024-01-24 20:02:53.578 [main] TC_ATC_002 - Land on My Wishlist Page 
+[INFO ] 2024-01-24 20:03:08.423 [main] Base - browser is closed
+[INFO ] 2024-01-24 20:10:54.286 [main] Base - browser is opened
+[INFO ] 2024-01-24 20:10:58.485 [main] TC_ATC_002 - url opened
+[INFO ] 2024-01-24 20:10:58.845 [main] TC_ATC_002 - window maximized
+[INFO ] 2024-01-24 20:11:01.186 [main] TC_ATC_002 - click on btn
+[INFO ] 2024-01-24 20:11:02.214 [main] TC_ATC_002 - Login Successfull 
+[INFO ] 2024-01-24 20:11:05.298 [main] TC_ATC_002 - Land on My Wishlist Page 
+[INFO ] 2024-01-24 20:11:21.479 [main] Base - browser is closed
+[INFO ] 2024-01-24 20:16:02.850 [main] Base - browser is opened
+[INFO ] 2024-01-24 20:16:06.958 [main] TC_ATC_002 - url opened
+[INFO ] 2024-01-24 20:16:07.733 [main] TC_ATC_002 - window maximized
+[INFO ] 2024-01-24 20:16:09.740 [main] TC_ATC_002 - click on btn
+[INFO ] 2024-01-24 20:16:10.824 [main] TC_ATC_002 - Login Successfull 
+[INFO ] 2024-01-24 20:16:13.513 [main] TC_ATC_002 - Land on My Wishlist Page 
+[INFO ] 2024-01-24 20:16:19.600 [main] Base - browser is closed

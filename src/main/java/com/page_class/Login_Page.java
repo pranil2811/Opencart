@@ -1,13 +1,9 @@
 package com.page_class;
 
-import static org.testng.Assert.assertEquals;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
-
 import com.utility.Utility;
 
 public class Login_Page {
@@ -37,10 +33,6 @@ public class Login_Page {
 		Utility.clickElement(driver, password);
 		Utility.sendKeys(driver, password, "pranil@123", 10);
 		Utility.clickElement(driver, LoginBtn);
-	}
-
-	public void clickLoginBtn() {
-
 	}
 
 }
