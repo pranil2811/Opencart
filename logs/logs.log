@@ -4,3 +4,11 @@
 [INFO ] 2024-01-17 15:04:49.638 [main] TC_LF_001 - click on btn
 [INFO ] 2024-01-17 15:04:50.386 [main] TC_LF_001 - Credentials entered 
 [INFO ] 2024-01-17 15:04:53.996 [main] Base - browser is closed
+[INFO ] 2024-01-17 16:18:36.793 [main] Base - browser is opened
+[INFO ] 2024-01-17 16:18:52.291 [main] TC_LF_001 - url opened
+[INFO ] 2024-01-17 16:18:53.227 [main] TC_LF_001 - window maximized
+[INFO ] 2024-01-17 16:18:56.222 [main] TC_LF_001 - click on btn
+[INFO ] 2024-01-17 16:18:57.926 [main] TC_LF_001 - Credentials entered 
+[INFO ] 2024-01-17 16:19:02.486 [main] Base - browser is closed
+[INFO ] 2024-01-17 16:24:07.143 [main] Base - browser is opened
+[INFO ] 2024-01-17 16:24:24.841 [main] Base - browser is closed
